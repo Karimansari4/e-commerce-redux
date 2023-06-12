@@ -1,5 +1,5 @@
 import React from 'react'
-import Avatar from '@mui/material/Avatar';
+import { useParams } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
@@ -9,15 +9,16 @@ import Container from '@mui/material/Container';
 import axios from 'axios'
 import {  Snackbar } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
-
-// import * as fs from 'fs';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-function AddPro() {
-
+function UpdatePro() {
+    const { id } = useParams()
+    const navigate = useNavigate()
     const [products, setProducts] = React.useState({
         name: '',
         description: '',
@@ -61,7 +62,7 @@ function AddPro() {
     }
 
     // submiting data
-    const handleSubmit = async(evt) => {
+    const handleUpdateProduct = async(evt) => {
         evt.preventDefault()
         if(!products.name){
             setValErr({name: 'Please enter product name?'})
@@ -79,7 +80,7 @@ function AddPro() {
         }else if(products.rate > 5){
             setValErr({rate: 'Please rate the product 0 to 5!'})
         }else{
-            return await axios.post(`http://localhost:4000/products`, products).then((response) => {
+            return await axios.put(`http://localhost:4000/products/${id}`, products).then((response) => {
                 setSuccess('Product added successfully.')
                 setCustomVariant('success')
                 setOpen(true)
@@ -89,6 +90,7 @@ function AddPro() {
                     price: '',
                     rate: '' 
                 })
+                navigate('/')
             }).catch((err) => {
                 setError(err.response.message)
                 setCustomVariant('error')
@@ -97,7 +99,21 @@ function AddPro() {
 
             })
         }
+        // console.log("data: ", products);
     }
+
+    const getSingleProduct = async() => {
+        return await axios.get(`http://localhost:4000/products/${id}`).then((response) => {
+            setProducts(response.data)
+        }).catch((err) => {
+            // setError(err.response)
+            console.log("get single error: ", err);
+        })
+    }
+
+    useEffect(() => {
+        getSingleProduct()
+    }, [id])
 
     return (
         <Container>
@@ -106,7 +122,7 @@ function AddPro() {
                   {success ? success : error}
               </Alert>
             </Snackbar>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3, p: 2, backgroundColor: "lightgray", borderRadius: '10px'}}>
+            <Box component="form" noValidate onSubmit={handleUpdateProduct} sx={{ mt: 3, p: 2, backgroundColor: "lightgray", borderRadius: '10px'}}>
 
                 <Grid container spacing={2} sx={{ mt: 3}}>
                     <Typography component={'h3'} variant='body' sx={{ ml: 2}} >Add Product</Typography>
@@ -144,4 +160,4 @@ function AddPro() {
     )
 }
 
-export default AddPro
+export default UpdatePro

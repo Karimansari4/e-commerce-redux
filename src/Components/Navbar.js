@@ -13,12 +13,16 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
+import { Badge } from '@mui/material';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { useSelector } from 'react-redux'
 
 
-const pages = ['Home', 'AddProduct'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
+
+    const { cart } = useSelector(item=> item.products)
 
     const [anchorElNav, setAnchorElNav] = useState(null);
     const [anchorElUser, setAnchorElUser] = useState(null);
@@ -62,25 +66,26 @@ function Navbar() {
                         </MenuItem>
 
                         <MenuItem onClick={handleCloseNavMenu}>
-                            <Typography textAlign="center">AddProduct</Typography>
+                            <Typography textAlign="center">add product</Typography>
                         </MenuItem>
-                    {/* {pages.map((page) => (
-                        <MenuItem key={page} onClick={handleCloseNavMenu}>
-                            <Typography textAlign="center">{page}</Typography>
-                        </MenuItem>
-                    ))} */}
                     </Menu>
                 </Box>
                 <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                 <Typography variant="h5" noWrap component="a" href="" sx={{ mr: 2, display: { xs: 'flex', md: 'none' }, flexGrow: 1, fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.3rem', color: 'inherit', textDecoration: 'none', }} > LOGO </Typography>
                 <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                    {/* {pages.map((page) => (
-                    <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }} >
-                        {page}
-                    </Button>
-                    ))} */}
+                    
                     <Link to="/"  style={{textDecoration: 'none', color: 'white'}}><Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }} >Home</Button></Link>
-                    <Link to="/addProduct"  style={{textDecoration: 'none', color: 'white'}}><Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }} >AddProduct</Button></Link>
+                    <Link to="/addProduct"  style={{textDecoration: 'none', color: 'white'}}><Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }} >add product</Button></Link>
+                </Box>
+
+                {/* cart icon */}
+                <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }}>
+                    <Link style={{textDecoration: 'none', color: 'white'}} to={'/cartPage'}>
+                        <IconButton size="large" aria-label="show 4 new mails" color="inherit"> 
+                            <Badge badgeContent={cart.length} color="error"> <ShoppingCartOutlinedIcon /> </Badge> 
+                        </IconButton>
+
+                    </Link>
                 </Box>
 
                 <Box sx={{ flexGrow: 0 }}>
