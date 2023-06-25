@@ -32,12 +32,8 @@ function DetailsPro() {
         getSingleProduct()
     }, [id])
 
-    // console.log("proudct: ", product);
     return (
         <Container>
-            {/* <Grid container spacing={2}>
-
-            </Grid> */}
             <Card sx={{ maxWidth: '100%', mt: 1 }}>
                 <CardMedia component="img" alt="green iguana" height="140" image="/images/sofa.jpg" />
                 <CardContent>
@@ -48,7 +44,7 @@ function DetailsPro() {
                     <Box sx={{ width: '100%', display: 'flex', p: 1, mt: 2}} >
                         <Box sx={{ width: '50%'}}>
                             <Typography variant="body2" color="text.secondary" sx={{ mb: 1}}> {product.price} <CurrencyRupeeIcon sx={{fontSize: '15px'}} /> </Typography>
-                            {/* <Typography variant='body' component={'div'} sx={{ ml: 1.5, mt: 10}}> <Rating name='read-only' value={product.rate} readOnly /> </Typography> */}
+                            
                             <Typography variant='body' component={'div'} sx={{ ml: 1.5}}> <Rating name='read-only' value={product.rate} readOnly /> </Typography>
                         </Box>
                         <Box sx={{ width: '50%', textAlign: 'right'}}>
