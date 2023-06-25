@@ -51,12 +51,12 @@
 
 <h6>Setp 5 -></h6><p>Than goto client directory and open cmd</p>
 
-<h6>Setp 6 -></h6><p>Type on cmd json-server db.json --port 4000</p>
 <p>To run fake json server on your local PC</p>
+<h6>Setp 6 -></h6><p>Type on cmd json-server db.json --port 4000</p>
 <a href="https://www.npmjs.com/package/json-server">Lear more about fake json server</a>
 
 # Note
-<p>To perform api request with json server you need to change url of axios request url to http://localhost:4000/products</p>
+<p>To perform api request with fake json server you need to change url of axios request url to http://localhost:4000/products</p>
 
 <h6>Setp 7 -></h6><p>Open one more cmd and type npm start to run react app</p>
 
@@ -64,4 +64,4 @@
 
 <p>Project is setedup and runinng on localhost:3000/</p>
 
-<h3>Demo Link -> <a href="https://648ae1760f696a00856adb07--monumental-maamoul-cb4a5d.netlify.app/">Click here</a></h3>
+<h3>Demo Link -> <a href="https://6497d7f015317c548cbe25c2--bejewelled-melba-f2b61a.netlify.app/">Click here</a></h3>
