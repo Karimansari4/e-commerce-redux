@@ -33,8 +33,8 @@ function Home() {
 
     // geting all data from fake json server
     const getAllData = async() => {
-        // return await axios.get('https://my-json-server.typicode.com/typicode/demo/posts').then((response) => {   json-server db.json --port 4000
-        return await axios.get('http://localhost:4000/products').then((response) => {
+        return await axios.get('https://my-json-server.typicode.com/Karimansari4/e-commerce-redux/products').then((response) => {   /* json-server db.json --port 4000 */
+        // return await axios.get('http://localhost:4000/products').then((response) => {  https://my-json-server.typicode.com/<your-github-username>/<your-repo-name>
             // console.log(response.data);
             setData(response.data)
             setLoading(true)
@@ -50,7 +50,7 @@ function Home() {
 
     // deleting product from fake json server
     const deleteProduct = async(id) => {
-        return await axios.delete(`http://localhost:4000/products/${id}`).then((response) => {
+        return await axios.delete(`https://my-json-server.typicode.com/Karimansari4/e-commerce-redux/products/${id}`).then((response) => {
             setCustomVariant('success')
             setSuccess('Product deleted successfully')
             setOpen(true)
@@ -81,13 +81,16 @@ function Home() {
         }
     }
 
+    // clearing data from filter array
     const handleClearFilterData = () => {
         setDailogValue('')
         setFilterData([])
     }
 
+    // loading skeleton for loading animation
     const LoadingSkeleton = () => {
         return (
+                <>
                     <Grid container spacing={2} sx={{ mt: 3, boxShadow: '3px 3px 15px 2px grey',}}>
                         <Grid item xs={7} /* style={{ border: '1px solid red'}} */>
                             <Grid container spacing={2}>
@@ -124,6 +127,7 @@ function Home() {
                             </Box>
                         </Grid>
                     </Grid>
+                </>
         )
     }
 

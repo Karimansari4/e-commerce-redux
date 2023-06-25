@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+<h1 align="center">React Dropdown</h1> <br/><br/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Ecommerce React app
+<p>Create the frontend for an ecommerce website. You can check out the demo link down below.</p>
 
-## Available Scripts
 
-In the project directory, you can run:
+# Main Features
+<ul>
+    <li>Navbar.</li>
+    <ul>
+        <li>Show cart items count</li>
+        <li>Show relevant navigation links </li>
+    </ul>
+    <li>All products page.</li>
+    <ul>
+        <li>Show list of products from the API (using the fake json-server) </li>
+        <li>Each product is editable by clicking on the “pencil”​ button. And we can edit that product inline. On finish editing the product, show some sort of Alert/Notification</li>
+        <li>Each product is deletable, on clicking of the delete button it will delete the product and show some sort of Alert/Notification </li>
+        <li>Implement a sort button. On clicking it should sort by “price”​ and show a cross button just beside it. On clicking the cross button remove the sort. </li>
+    </ul>
+    <li>Create page.</li>
+    <ul>
+        <li>On clicking of the Add button add the product in the DB, and show some sort of Alert/Notification</li>
+    </ul>
+    <li>Product detail page</li>
+    <ul>
+        <li>Show all the details of a product</li>
+        <li>Give button to add a product to cart</li>
+    </ul>
+    <li>Cart page</li>
+    <ul>
+        <li>Show all the items in the cart.</li>
+        <li>Delete button to remove the items in the cart</li>
+    </ul>
+    <li>Handle errors and success alerts etc.</li>
+    <li>Handle errors as well from the API and show appropriate Alert/Notification.</li>
+</ul>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# HOW TO INSTALL AND SETUP IN YOUR LOCAL PC/LAPTOP React App and Fake Json Server
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h6>Setp 1 -></h6> <p>First goto <a href="https://nodejs.org/en">Node js official website</a> to download node js in your pc/laptop</p>
+</h6><p>if already installed than skip it.</p>
 
-### `npm test`
+<h6>Setp 2 -></h6><p>Clone or download the zip of our project</p>
+<a href="https://github.com/Karimansari4/e-commerce-redux.git">Git Repo Link</a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h6>Setp 3 -></h6><p>Extract the zip and go to root directory of project</p>
 
-### `npm run build`
+<h6>Setp 4 -></h6><p>Open CMD and type <h6>npm i</h6> it will install all the dependencies</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h6>Setp 5 -></h6><p>Than goto client directory and open cmd</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<h6>Setp 6 -></h6><p>Type on cmd json-server db.json --port 4000</p>
+<p>To run fake json server on your local PC</p>
+<a href="https://www.npmjs.com/package/json-server">Lear more about fake json server</a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Note
+<p>To perform api request with json server you need to change url of axios request url to http://localhost:4000/products</p>
 
-### `npm run eject`
+<h6>Setp 7 -></h6><p>Open one more cmd and type npm start to run react app</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p>It will automatically redirect to Browser in localhost:3000</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p>Project is setedup and runinng on localhost:3000/</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h3>Demo Link -> <a href="https://648ae1760f696a00856adb07--monumental-maamoul-cb4a5d.netlify.app/">Click here</a></h3>

@@ -1,5 +1,4 @@
 import React from 'react'
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
@@ -79,7 +78,7 @@ function AddPro() {
         }else if(products.rate > 5){
             setValErr({rate: 'Please rate the product 0 to 5!'})
         }else{
-            return await axios.post(`http://localhost:4000/products`, products).then((response) => {
+            return await axios.post(`https://my-json-server.typicode.com/Karimansari4/e-commerce-redux/products`, products).then((response) => {
                 setSuccess('Product added successfully.')
                 setCustomVariant('success')
                 setOpen(true)
@@ -89,6 +88,7 @@ function AddPro() {
                     price: '',
                     rate: '' 
                 })
+                console.log("response: ", response);
             }).catch((err) => {
                 setError(err.response.message)
                 setCustomVariant('error')

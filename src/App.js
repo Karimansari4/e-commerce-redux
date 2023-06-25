@@ -12,16 +12,10 @@ import CartPro from './Pages/CartPro';
 import { AddCart } from './redux/cartSystem'; */
 
 // // json-server db.json --port 4000,
+// https://my-json-server.typicode.com/Karimansari4/e-commerce-redux/products
+// http://localhost:4000/products
 
 function App() {
-  /* const dispatch = useDispatch()
-  const [products, setProducts] = useState(JSON.parse(localStorage.getItem("proCart"))) */
-
-  /* useEffect(() => {
-    if(products.length > 0){
-      dispatch(AddCart(products))
-    }
-  }, []) */
 
   return (
     <Fragment>

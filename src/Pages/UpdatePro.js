@@ -80,7 +80,7 @@ function UpdatePro() {
         }else if(products.rate > 5){
             setValErr({rate: 'Please rate the product 0 to 5!'})
         }else{
-            return await axios.put(`http://localhost:4000/products/${id}`, products).then((response) => {
+            return await axios.put(`https://my-json-server.typicode.com/Karimansari4/e-commerce-redux/products/${id}`, products).then((response) => {
                 setSuccess('Product added successfully.')
                 setCustomVariant('success')
                 setOpen(true)
@@ -103,7 +103,7 @@ function UpdatePro() {
     }
 
     const getSingleProduct = async() => {
-        return await axios.get(`http://localhost:4000/products/${id}`).then((response) => {
+        return await axios.get(`https://my-json-server.typicode.com/Karimansari4/e-commerce-redux/products/${id}`).then((response) => {
             setProducts(response.data)
         }).catch((err) => {
             // setError(err.response)
